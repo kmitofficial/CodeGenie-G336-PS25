@@ -1,0 +1,4 @@
+// This file overwrite default and user settings.
+{
+    "typescript.tsc.autoDetect": "off"    // Turn off tsc task auto detection/compilation, since we are doing the same tasks using npm scripts
+}

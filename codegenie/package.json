@@ -1,0 +1,174 @@
+{
+    "name": "codegenie",
+    "displayName": "CodeGenie",
+    "description": "AI-powered coding assistant using DeepSeek Coder.",
+    "version": "1.0.0",
+    "publisher": "Team G-336",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "main": "dist/extension.js",
+    "contributes": {
+        "activationEvents": [
+            "onView:codegenieView",
+            "onCommand:codegenie.openPanel"
+        ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "codegenieViewContainer",
+                    "title": "CodeGenie",
+                    "icon": "./media/icon.png"
+                }
+            ]
+        },
+        "views": {
+            "codegenieViewContainer": [
+                {
+                    "type": "webview",
+                    "id": "codegenieView",
+                    "name": "CodeGenie AI",
+                    "icon": "./media/icon.png"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "codegenie.getCode",
+                "title": "CodeGenie: Generate Code"
+            },
+            {
+                "command": "codegenie.generateFromComment",
+                "title": "CodeGenie: Generate from Last Comment"
+            },
+            {
+                "command": "codegenie.enableCodeGenie",
+                "title": "CodeGenie: Enable CodeGenie"
+            },
+            {
+                "command": "codegenie.disableCodeGenie",
+                "title": "CodeGenie: Disable CodeGenie"
+            },
+            {
+                "command": "codegenie.triggerInlineCompletion",
+                "title": "CodeGenie: Trigger Inline Completion"
+            },
+            {
+                "command": "codegenie.debugSelectedCode",
+                "title": "CodeGenie: Debug Selected Code"
+            },
+            {
+                "command": "codegenie.explainCode",
+                "title": "CodeGenie: Explain Code"
+            },
+            {
+                "command": "codegenie.improveCode",
+                "title": "CodeGenie: Improve Code"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "codegenie.getCode",
+                    "when": "!editorHasSelection",
+                    "group": "@2_codegenie"
+                },
+                {
+                    "command": "codegenie.explainCode",
+                    "when": "editorHasSelection",
+                    "group": "@2_codegenie"
+                },
+                {
+                    "command": "codegenie.improveCode",
+                    "when": "editorHasSelection",
+                    "group": "@2_codegenie"
+                },
+                {
+                    "command": "codegenie.debugSelectedCode",
+                    "when": "editorHasSelection",
+                    "group": "@2_codegenie"
+                },
+                {
+                    "command": "codegenie.generateFromComment",
+                    "when": "!editorHasSelection",
+                    "group": "@2_codegenie"
+                },
+                {
+                    "command": "codegenie.triggerInlineCompletion",
+                    "when": "!editorHasSelection",
+                    "group": "@2_codegenie"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "codegenie.getCode",
+                "key": "ctrl+g ctrl+c",
+                "mac": "cmd+g cmd+c",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "codegenie.triggerInlineCompletion",
+                "key": "ctrl+t ctrl+i",
+                "mac": "cmd+t cmd+i",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "codegenie.generateFromComment",
+                "key": "ctrl+alt+,",
+                "mac": "cmd+alt+,",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "codegenie.debugSelectedCode",
+                "key": "alt+s",
+                "mac": "alt+s",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "codegenie.enable",
+                "key": "ctrl+alt+e",
+                "mac": "cmd+alt+e",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "codegenie.disable",
+                "key": "ctrl+alt+d",
+                "mac": "cmd+alt+d",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "watch:tsc": "tsc -w",
+        "watch:esbuild": "esbuild src/index.tsx --bundle --outfile=dist/bundle.js --watch",
+        "compile": "webpack --mode production",
+        "watch": "webpack --watch",
+        "build-ui": "cd ./src/codegenie-ui && npm run build"
+    },
+    "dependencies": {
+        "axios": "^1.3.0",
+        "react-helmet-async": "^2.0.5"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.14.1",
+        "@types/react": "^19.1.5",
+        "@types/react-dom": "^19.1.5",
+        "@types/testing-library__react": "^10.0.1",
+        "@types/vscode": "^1.98.0",
+        "esbuild": "^0.25.5",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.3.2",
+        "ts-loader": "^9.5.2",
+        "typescript": "^4.9.5",
+        "webpack": "^5.98.0",
+        "webpack-cli": "^5.1.4"
+    },
+    "overrides": {
+        "glob": "^11.0.1"
+    }
+}
