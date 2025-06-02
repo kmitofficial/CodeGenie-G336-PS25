@@ -1,85 +1,103 @@
+# ![CodeGenie Icon](images/icon.png) CodeGenie — AI-Powered VS Code Extension
 
-# **CodeGenie**
+**CodeGenie** is a Visual Studio Code extension that integrates generative AI directly into your coding workflow. Designed by developers, for developers — it empowers users with intelligent suggestions, code generation, debugging assistance, and more.
 
-## Introduction
+---
 
-CodeGenie is an **AI-powered coding** assistant designed to revolutionize the software development process. It **utilizes DeepSeek Coder** to provide intelligent code suggestions, detect errors, and enhance overall coding efficiency all the while maintaining high-quality standards.
+# 🚀 Introduction
 
-Being a flexible **friend for developers** working on web development, data science, machine learning, and other software apllications, the tool **supports several programming languages and frameworks**. CodeGenie improves efficiency without interfering with the developer's workflow thanks to a substantially interactive interface and flawless **integration into a well-known IDE like VS Code**.
+**CodeGenie** is an AI-powered coding assistant designed to **revolutionize the software development workflow**. Built on top of the powerful **DeepSeek-Coder** models, it brings intelligent, context-aware coding assistance directly into your editor — helping you write better code, faster.
 
-### **Purpose**
+With native **Visual Studio Code integration** and support for a wide range of programming languages and frameworks, CodeGenie enables developers to:
 
-The primary goal of CodeGenie is to streamline the coding process by offering:
+- ✅ **Generate accurate, context-sensitive code suggestions**  
+- 🛠️ **Detect and fix errors in real-time**  
+- ⚙️ **Refactor and optimize code for performance and clarity**  
+- 🌐 **Work seamlessly across technologies**, from web to machine learning
 
-- Context-aware code suggestions
-- Error detection and correction
-- Code optimization
-- Support for multiple programming languages and frameworks
+Whether you're prototyping a web app, building data pipelines, or debugging legacy code, CodeGenie empowers you to stay in flow, reduce cognitive load, and focus on what matters most — building great software.
 
-By integrating AI into the development workflow, CodeGenie aims to boost efficiency and improve code quality.
+---
 
-### **Applications**
+# 💡 Use Cases
 
-CodeGenie can be used in various software development scenarios, including:
+Here’s how CodeGenie supports developers across domains:
 
-- **Web Development**: Assisting in writing front-end and back-end code
+### 🌐 Web Development
+- Generate and refine frontend code (HTML, CSS, JavaScript)  
+- Build backend services with Node.js, Django, Flask, and more
 
-- **Machine Learning & Data Science**: Generating model scripts and preprocessing code
+### 🤖 Machine Learning & Data Science
+- Generate model training scripts and evaluation code  
+- Create data cleaning, preprocessing, and visualization pipelines
 
-- **Software Engineering**: Automating repetitive tasks and improving coding standards
+### 🛠️ General Software Engineering
+- Automate boilerplate code generation  
+- Implement design patterns and follow best practices  
+- Refactor and maintain large codebases
 
-- **Debugging & Optimization**: Identifying and fixing errors quickly
+### 🐞 Debugging
+- Detect bugs and suggest intelligent fixes in real-time  
+- Explain code behavior to assist in troubleshooting
 
-- **Suggests best practices for efficient and maintainable code**
+### 📘 Learning & Exploration
+- Use natural language to explore code functionality  
+- Learn programming concepts with contextual examples  
 
-## Architecture Diagram
+---
 
-![My Image](images/Architecture.jpg)
+## 📐 Architecture Diagram (DeepSeek Coder V2)
 
-## Workflow Diagram
+<p align="center">
+  <img src="images/Architecture.png" style="width: 100%; max-height: 400px; object-fit: contain;" />
+</p>
 
-<img src="images/Workflow.jpg" alt="My Image" width="500" height="1400">
+---
 
-## Research Papers
+## 🔄 Workflow Diagram
 
-### **[Deepseep-Coder](https://arxiv.org/pdf/2401.14196)**
+<p align="center">
+  <img src="images/Workflow.png" height: 60%" />
+</p>
 
-**DeepSeek Coder Series: Advancing Open-Source AI for Code**
+---
 
-DeepSeek Coder is a family of open-source code models (1.3B to 33B parameters) designed to transform software development by automating tasks like bug detection and code generation. Trained from scratch on 2 trillion tokens across 87 programming languages, these models excel in understanding syntax and context.
+### 📜 License & Acknowledgments
 
-The innovative Fill-In-Middle (FIM) technique allows them to predict missing code segments, bridging gaps between files. Notably, the 7B model outperforms leading open-source alternatives by 5x and even surpasses ChatGPT-3.5 Turbo, narrowing the performance gap with GPT-4. Enhanced versions like DeepSeek-Coder-Instruct and v1.5 further refine capabilities through instruction tuning and extended training.
+CodeGenie is released under the **MIT License**, permitting free use, modification, and distribution for personal and commercial purposes.
 
-**Rigorous Data Curation for High-Quality Training**
+This project utilizes [DeepSeek-Coder](https://github.com/deepseek-ai/DeepSeek-Coder), which is governed by the **DeepSeek License Agreement Version 1.0 (October 2023)**. This license grants broad rights to use, reproduce, and distribute the model and its derivatives, but also includes important **use-based restrictions** to ensure responsible and lawful usage.
 
-The training dataset combines 85% code and 10% code-related English, sourced from GitHub and Stack Exchange. Strict filtering removed 67% of raw data, retaining only high-quality code based on readability, syntax checks, and deduplication. 
+#### Important Use Restrictions from DeepSeek License:
 
-Unique repository-level dependency parsing preserved contextual relationships between files, while compiler-based screening eliminated errors. The final 798GB dataset includes 603 million files, with Java (18%), Python (15%), and C++ (11%) as major contributors. This meticulous process ensures robust model performance and minimizes low-quality or redundant data.
+- No use violating applicable laws or infringing third-party rights  
+- No military use  
+- No generating harmful, false, or inappropriate content  
+- No unauthorized dissemination of personal data  
+- No discriminatory or harmful uses against individuals or groups  
 
-**Efficient Architecture and Continuous Improvement**
+By using CodeGenie, you agree to comply with all relevant terms of the DeepSeek License, including these use-based restrictions, and assume responsibility for your use of outputs generated via the model.
 
-Built as a decoder-only Transformer with Rotary Positional Embedding and Flash Attention v2, DeepSeek Coder leverages efficient training on NVIDIA A100/H800 GPUs. The Instruct variant, fine-tuned on instruction-based data, enhances responsiveness—generating not just functional code (e.g., a Pygame snake game) but also user-requested features like scoring systems.
+For full details, please review the [DeepSeek License Agreement](https://github.com/deepseek-ai/DeepSeek-Coder/blob/main/LICENSE-MODEL) and associated documentation.
 
-Post-launch, version 1.5 models underwent additional training with 2 trillion tokens, further boosting their coding precision and versatility. By prioritizing open-source innovation and rigorous methodology, DeepSeek aims to democratize advanced AI tools for developers.
+---
 
-### **[DeepSeek-Coder V2](https://arxiv.org/pdf/2406.11931)**
+#### 🔗 Repositories
 
-**DeepSeek Coder V2: Expanded Capabilities and Training**
+| Project          | Link                                                                                      |
+|------------------|-------------------------------------------------------------------------------------------|
+| **CodeGenie**      | [github.com/kmitofficial/CodeGenie-G336-PS25](https://github.com/kmitofficial/CodeGenie-G336-PS25)   |
+| **DeepSeek-Coder** | [github.com/deepseek-ai/DeepSeek-Coder](https://github.com/deepseek-ai/DeepSeek-Coder)               |
 
-DeepSeek Coder V2 significantly upgrades its predecessor by supporting 338 programming languages (up from 86) and extending context length to 128K tokens (from 16K). Built on the pre-trained DeepSeek V2 framework, it undergoes additional training with 6 trillion tokens, totaling 10.2 trillion tokens.
+---
 
-The dataset blends 60% source code, 30% natural language, and 10% math corpus, refined using strict filtering and deduplication rules akin to earlier versions. Leveraging the DeepSeek2 Mixture-of-Experts (MoE) architecture, V2 introduces two models: a 16B variant (using Next-Token-Prediction and Fill-In-Middle objectives) and a 236B variant (Next-Token-Prediction only), with efficient activation parameters (2.4B and 21B, respectively).
+## 🙌 Contributors & Milestones
 
-**Benchmark Dominance and Specialized Training**
-
-DeepSeek Coder V2 outperforms its V1 model—which lagged behind GPT-4—by nearly surpassing GPT-4o across coding benchmarks. While V1 excelled against open-source models, V2’s rigorous training on code, math, and natural language data (sourced via pipelines like DeepSeekMath and Common Crawl) elevates it to a top-tier coding companion.
-
-This leap highlights its ability to handle complex code generation, math reasoning, and contextual understanding, cementing its position as a cutting-edge, open-source alternative to proprietary models.
-## Team Members
-
-- [Krishna Chaitanya](https://github.com/Krishna752006)
-- [Sneha](https://github.com/sneha123-reddy)
-- [Lokesh Vasireddy](https://github.com/LokeshVasireddy)
-- [Mahesh Kiran](https://github.com/Mahesh-Kiran)
-- [Triveni](https://github.com/AdepuTriveni)
-- [AASRITH CODER](https://github.com/AASRITHCODER)
+| **Contributors** | **MS1 Presentation** | **Milestone 1** | **MS2 Presentation** | **Milestone 2** |
+|------------------|------------------------|------------------|------------------------|------------------|
+| [Mahesh Kiran](https://github.com/Mahesh-Kiran) | [PPT](https://docs.google.com/presentation/d/1EoJBs_tgTp9auJ3mwyXGrIqdJsC0PtbT/edit?usp=sharing&ouid=106538531591857830011&rtpof=true&sd=true) | [Drive](https://drive.google.com/file/d/1xfw9SunwAVXpOTAQwrsldIf_fNUCApZS/view?usp=drive_link) | [PPT](https://docs.google.com/presentation/d/14aEfI7hHQ_GZyRWjx_tp3idsh8emBJhi/edit?usp=sharing&ouid=106538531591857830011&rtpof=true&sd=true) | [Youtube](https://youtu.be/lWarovvT_jk) |
+| [Krishna Chaitanya](https://github.com/Krishna752006) | [PPT](https://docs.google.com/presentation/d/1BYKYG7jLn7OR7fBxhIoyDjB0ZLVdzyRC/edit?usp=drive_link&ouid=108051438970748661638&rtpof=true&sd=true) | [Drive](https://drive.google.com/file/d/1bj73JlDlgTRHQOKCWK3iCyE_lrKvhYP-/view?usp=sharing) | [PPT](https://docs.google.com/presentation/d/1iIAPWsR53zegriwS_SBoeZ9B5a7dDHFP/edit?usp=drive_link&ouid=108051438970748661638&rtpof=true&sd=true) | [Youtube](https://youtu.be/klt1-3YqaLk) |
+| [Sneha](https://github.com/sneha123-reddy) | [PPT](https://1drv.ms/p/c/72d46eb299d280c2/EVZ8KQF4W3FJi-J79TrFVg4BTYbSXec5IBUOmIPW_qdusg?e=SXSYui) | [Youtube](https://youtu.be/v8eRd9m_zjc) | [PPT](https://1drv.ms/p/c/72d46eb299d280c2/EVnea1noLi1Ht0CzaujIMywBuuiXxNTvHUm5mPBWaTeNLQ?e=1OQnWe) | [Youtube](https://youtu.be/wxUi3C49ve8) |
+| [AASRITH CODER](https://github.com/AASRITHCODER) | [PPT](https://docs.google.com/presentation/d/1hx0RpEnn4Bo02LyjqoIH4H_-qJsc6RKg/edit?usp=drive_link&ouid=108051438970748661638&rtpof=true&sd=true) | [Drive](https://drive.google.com/file/d/1ZYD-4lAayVCkRBY7v4QpCB50rQpIIG5a/view?usp=drive_link) | [PPT](https://gamma.app/docs/CodeGenie-Your-Brains-Other-Smarter-Coding-Half--mktk9rcq98bcy8l?mode=present#card-76kk308m6hcwdso) | [Youtube](https://www.youtube.com/watch?v=Ty6n4Pm6C_U) |
+| [Triveni](https://github.com/AdepuTriveni) | [PPT](https://docs.google.com/presentation/d/1g9xMyrs_GlXpAKrPXTFyQsaiyq3AqpWf/edit?usp=sharing&ouid=112166444433974300257&rtpof=true&sd=true) | [Youtube](https://www.youtube.com/watch?v=J30KbJHL8to) | [PPT](https://docs.google.com/presentation/d/1F9fXYD4_sCn7wCVG4X6DNhSQQa84-TSY/edit?usp=sharing&ouid=112166444433974300257&rtpof=true&sd=true) | [Youtube](https://youtu.be/sm6rf_juJt0?feature=shared) |
+| [Lokesh Vasireddy](https://github.com/LokeshVasireddy) | [PPT](https://docs.google.com/presentation/d/1MB5-yGJJu1qPqzd0Qe-SmdQdeK48UlBl/edit?usp=drive_link&ouid=108051438970748661638&rtpof=true&sd=true) | [Drive](https://drive.google.com/file/d/1bsHk2H0xT1xpuwLSEgrrTk13GvCW8Lkg/view) | [PPT](https://docs.google.com/presentation/d/1leSBgHLeoFi6p2D8jReas4tb_CTMhJTU/edit?usp=drive_link&ouid=108051438970748661638&rtpof=true&sd=true) | [Youtube](https://youtu.be/sO_vApfgWSo) |

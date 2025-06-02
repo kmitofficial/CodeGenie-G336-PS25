@@ -1,0 +1,45 @@
+// Tasks that run before the new VS Code Debugging Environment is created
+{
+	"version": "2.0.0", // Version of Task Configuration Schema
+	"tasks": [
+		{
+            "label": "watch",
+            "dependsOn": [ // Since it is Default Build Task, it will run the below tasks Automatically
+                "npm: watch:tsc",
+                "npm: watch:esbuild"
+            ],
+            "presentation": {
+                "reveal": "never" // Never Show Terminal Output
+            },
+            "group": { // Default Build Task 
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "npm",
+            "script": "watch:esbuild",
+            "group": "build",
+            //"problemMatcher": "$esbuild-watch",
+            "problemMatcher": "$tsc-watch",
+            "isBackground": true,
+            "label": "npm: watch:esbuild",
+            "presentation": {
+                "group": "watch",
+                "reveal": "never"
+            }
+        },
+		{
+            "type": "npm",
+            "script": "watch:tsc",
+            "group": "build",
+            "problemMatcher": "$tsc-watch",
+            "isBackground": true,
+            "label": "npm: watch:tsc",
+            "presentation": {
+                "group": "watch",
+                "reveal": "never"
+            }
+        }
+	]
+}
